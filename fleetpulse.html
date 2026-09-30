@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FleetPulse Intelligence · Praveenraj Manickam</title>
+<meta name="description" content="Praveenraj Manickam, Data Engineer. I turn raw machine signals (CAN bus, SCADA, telecom) into intelligence people can trust.">
+<meta property="og:title" content="Praveenraj Manickam · Data Engineer">
+<meta property="og:description" content="From raw machine signals to trusted decisions. FleetPulse Intelligence, wind-energy analytics and more.">
+<meta property="og:image" content="assets/img/fp-overview.webp">
+<meta name="theme-color" content="#07090d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Cpath d='M8 34h12l5-12 8 22 6-16 4 6h13' fill='none' stroke='%2330e0c1' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="brand" aria-label="Home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h12l5-12 8 22 6-16 4 6h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Praveenraj<b>.</b></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html#projects">← All projects</a>
+    <a href="fleetpulse.html" class="active">FleetPulse</a><a href="wind-energy.html">Wind Energy</a><a href="dissertation.html">Dissertation</a>
+    <a href="index.html#contact" class="nav-cta">Let's talk</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+<section class="proj-hero">
+  <div class="wrap">
+    <a href="index.html#projects" class="back mono reveal">← Back to projects</a>
+    <span class="chapter-no mono reveal">Personal project · Data platform</span>
+    <h1 class="ph-title reveal">FleetPulse Intelligence</h1>
+    <div class="chip-row">
+        <span class="chip">PySpark</span><span class="chip">Delta Lake</span><span class="chip">J1939</span><span class="chip">FastAPI</span><span class="chip">React + TS</span><span class="chip">LLM guardrails</span>
+        <a class="chip chip-link" href="https://github.com/Praveenrajmanickam/fleetpulse-intelligence" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    <div class="psr">
+      <div class="psr-item reveal"><span class="mono psr-k k-p">The problem</span><p>A truck's CAN bus sends thousands of binary frames every second. Fleet teams can't read that data, and they can't trust numbers they can't trace back to a source.</p></div>
+      <div class="psr-item reveal"><span class="mono psr-k k-b">What I built</span><p>An end-to-end platform: J1939 decoding, a PySpark Bronze → Silver → Gold lakehouse, FastAPI, a React dashboard, and an AI analyst that only explains validated evidence.</p></div>
+      <div class="psr-item reveal"><span class="mono psr-k k-r">The result</span><p>68M frames processed · fuel within 0.2% of the truck's own counter · 880 idle events found · 409 automated tests.</p></div>
+    </div>
+    <figure class="ph-cover reveal" data-full="assets/img/fp-overview.webp"><img src="assets/img/fp-overview.webp" alt="FleetPulse Intelligence" width="1600" height="1000"></figure>
+  </div>
+</section>
+
+<!-- ================= 02 FLEETPULSE ================= -->
+<section class="chapter chapter-dark" id="fleetpulse">
+  <div class="wrap">
+
+    <div class="kpis">
+      <div class="kpi reveal"><b class="count" data-to="68051361" data-sep="1">0</b><span>CAN frames</span></div>
+      <div class="kpi reveal"><b><span class="count" data-to="0.2" data-dec="1">0</span>%</b><span>fuel reconciliation error</span></div>
+      <div class="kpi reveal"><b class="count" data-to="880">0</b><span>idle events detected</span></div>
+      <div class="kpi reveal"><b class="count" data-to="409">0</b><span>automated tests</span></div>
+    </div>
+
+    <div class="scrolly" id="scrolly">
+      <div class="scrolly-steps">
+        <div class="step" data-img="fp-overview" data-cap="Overview">
+          <span class="step-no mono">01 · Problem</span>
+          <h3>Raw CAN is noise.</h3>
+          <p>Binary payloads, gaps, stale signals. I built the layers that make it readable.</p>
+        </div>
+        <div class="step" data-img="fp-trace" data-cap="CAN → Gold trace">
+          <span class="step-no mono">02 · Trust</span>
+          <h3>Every number traces to a real frame.</h3>
+          <p>Dashboard value → Gold → Silver → raw bytes → source file and line.</p>
+        </div>
+        <div class="step" data-img="fp-twin" data-cap="Vehicle Digital Twin">
+          <span class="step-no mono">03 · Digital twin</span>
+          <h3>Signals mapped onto the truck.</h3>
+          <p>Click a system and see its decoded J1939 signals.</p>
+        </div>
+        <div class="step" data-img="fp-idle" data-cap="Idle Intelligence">
+          <span class="step-no mono">04 · Insight</span>
+          <h3>8.33 h stationary with engine on.</h3>
+          <p>Found in the data, not guessed: 880 events and 19.6 L of fuel.</p>
+        </div>
+        <div class="step" data-img="fp-ai" data-cap="AI Analyst">
+          <span class="step-no mono">05 · AI</span>
+          <h3>FleetPulse computes. The LLM explains.</h3>
+          <p>Every number the AI states is validated against the evidence.</p>
+        </div>
+      </div>
+      <div class="scrolly-stage">
+        <div class="browser" id="scrollyBrowser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url mono">fleetpulse / <b id="scrollyCap">Overview</b></span></div>
+          <div class="browser-view">
+            <img src="assets/img/fp-overview.webp" alt="FleetPulse dashboard screenshot" id="scrollyImg" width="1600" height="900">
+          </div>
+        </div>
+        <div class="stage-dots" id="stageDots"></div>
+      </div>
+    </div>
+
+    <div class="pipeline-block">
+      <h3 class="sub-h reveal">Architecture</h3>
+      <div class="pipeline" id="pipeline">
+        <div class="pnode"><span class="mono">01</span><b>Raw CAN</b></div>
+        <div class="pnode bronze"><span class="mono">02</span><b>Bronze</b></div>
+        <div class="pnode silver"><span class="mono">03</span><b>Silver</b></div>
+        <div class="pnode gold"><span class="mono">04</span><b>Gold</b></div>
+        <div class="pnode"><span class="mono">05</span><b>FastAPI</b></div>
+        <div class="pnode"><span class="mono">06</span><b>React</b></div>
+        <div class="pnode ai"><span class="mono">07</span><b>AI Analyst</b></div>
+        <svg class="pipe-flow" aria-hidden="true"><line x1="0" y1="50%" x2="100%" y2="50%"/></svg>
+      </div>
+    </div>
+
+    <div class="decode reveal" id="decode">
+      <div class="decode-copy">
+        <span class="chapter-no mono">Try it</span>
+        <h3>Decode a real CAN frame.</h3>
+        <button class="btn btn-primary" id="decodeBtn">▶ Decode frame</button>
+      </div>
+      <div class="decode-panel mono">
+        <div class="dline"><span class="dk">CAN ID</span><span class="dv">0x0CF004E6</span></div>
+        <div class="bytes" id="bytes">
+          <span>F0</span><span>7D</span><span>82</span><span class="hot">BD</span><span class="hot">12</span><span>FF</span><span>FF</span><span>FF</span>
+        </div>
+        <div class="dline" data-step="1"><span class="dk">PGN</span><span class="dv">61444 <em>EEC1</em></span></div>
+        <div class="dline" data-step="2"><span class="dk">SPN</span><span class="dv">190 <em>Engine speed</em></span></div>
+        <div class="dline" data-step="3"><span class="dk">bytes 4–5</span><span class="dv">0x12BD → 4797</span></div>
+        <div class="dline" data-step="4"><span class="dk">× 0.125</span><span class="dv">rpm/bit</span></div>
+        <div class="dline result" data-step="5"><span class="dk">engine_speed</span><span class="dv"><b>599.625</b> rpm <em class="ok">✓ valid</em></span></div>
+      </div>
+    </div>
+
+    <h3 class="sub-h reveal">From the build</h3>
+    <div class="bento">
+      <figure class="b-item b-wide reveal" data-full="assets/img/fp-event.webp"><img src="assets/img/fp-event.webp" alt="Event investigation screen" loading="lazy" width="1600" height="900"><figcaption>Event investigation</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/fp-drive.webp"><img src="assets/img/fp-drive.webp" alt="Speed, RPM, fuel and coolant over a driving session" loading="lazy" width="1600" height="1223"><figcaption>Discovery: one driving session</figcaption></figure>
+      <figure class="b-item reveal" data-full="assets/img/fp-sensors.webp"><img src="assets/img/fp-sensors.webp" alt="Sensor Explorer" loading="lazy" width="1600" height="900"><figcaption>Sensor Explorer</figcaption></figure>
+      <figure class="b-item reveal" data-full="assets/img/fp-health.webp"><img src="assets/img/fp-health.webp" alt="Signal Health" loading="lazy" width="1600" height="900"><figcaption>Signal Health</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/fp-rpm.webp"><img src="assets/img/fp-rpm.webp" alt="Engine speed vs vehicle speed, showing gear lines" loading="lazy" width="1045" height="753"><figcaption>RPM vs speed: gears emerge from data</figcaption></figure>
+      <figure class="b-item reveal" data-full="assets/img/fp-session.webp"><img src="assets/img/fp-session.webp" alt="Session Explorer" loading="lazy" width="1600" height="900"><figcaption>Session Explorer</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+
+<section class="next-wrap">
+  <div class="wrap">
+    <a class="next-proj reveal" href="wind-energy.html">
+      <span class="mono">Next project</span>
+      <b>Wind Turbine Power-Curve Intelligence →</b>
+    </a>
+    <div class="hero-actions center reveal" style="margin-top:32px">
+      <a href="index.html#contact" class="btn btn-primary">Talk to me about this</a>
+      <a href="assets/Praveenraj_Manickam_Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lb-close" aria-label="Close">×</button>
+  <img alt="">
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

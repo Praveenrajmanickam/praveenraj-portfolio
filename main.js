@@ -38,6 +38,8 @@
   $$('.reveal, .tl-item, #pipeline, .diss-visual').forEach(el => io.observe(el));
   $$('.count').forEach(el => { if (!el.closest('.reveal')) io.observe(el); });
 
+  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
   /* ---------- counters ---------- */
   function countUp(el) {
     if (el.dataset.done) return; el.dataset.done = 1;
@@ -59,6 +61,7 @@
   }
 
   /* ---------- hero typed line ---------- */
+  if ($('#typed')) {
   const phrases = [
     'ingest --source can_bus --frames 68,051,361',
     'fit power_curve --turbines 8 --r2 0.999',
@@ -75,9 +78,10 @@
     for (let k = s.length; k >= 0; k--) { typed.textContent = s.slice(0, k); await wait(14); }
     await wait(300); loop(i + 1);
   })();
-  function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+  }
 
   /* ---------- hero signal canvas ---------- */
+  if ($('#signalCanvas')) {
   const cv = $('#signalCanvas'), ctx = cv.getContext('2d');
   let W, H, t = 0;
   const size = () => { const d = devicePixelRatio || 1; W = cv.offsetWidth; H = cv.offsetHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
@@ -106,8 +110,10 @@
     t++; if (!reduced) requestAnimationFrame(draw);
   }
   draw();
+  }
 
   /* ---------- id card oscilloscope ---------- */
+  if ($('#scopePath')) {
   const sp = $('#scopePath');
   let ph = 0;
   function scope() {
@@ -121,6 +127,7 @@
     if (!reduced) requestAnimationFrame(scope);
   }
   scope();
+  }
 
   /* ---------- tilt ---------- */
   $$('.tilt').forEach(el => {
@@ -142,12 +149,14 @@
   /* ---------- timeline fill ---------- */
   const tl = $('#timeline'), tlFill = $('#tlFill');
   function timelineFill() {
+    if (!tl) return;
     const r = tl.getBoundingClientRect();
     const p = Math.min(1, Math.max(0, (innerHeight * .6 - r.top) / r.height));
     tlFill.style.height = p * 100 + '%';
   }
 
   /* ---------- scrollytelling ---------- */
+  if ($('#scrolly')) {
   const steps = $$('.step'), img = $('#scrollyImg'), cap = $('#scrollyCap'), dots = $('#stageDots');
   steps.forEach((s, i) => {
     dots.appendChild(document.createElement('i'));
@@ -174,11 +183,13 @@
   }, { rootMargin: '-45% 0px -45% 0px' });
   steps.forEach(s => stepIO.observe(s));
   setStep(0);
+  }
 
   /* ---------- pipeline stagger ---------- */
   $$('#pipeline .pnode').forEach((n, i) => n.style.transitionDelay = i * 110 + 'ms');
 
   /* ---------- CAN decode demo ---------- */
+  if ($('#decodeBtn')) {
   const dBtn = $('#decodeBtn'), dLines = $$('.decode-panel .dline[data-step]'), bytes = $('#bytes');
   let decoding = false;
   dBtn.addEventListener('click', async () => {
@@ -193,8 +204,10 @@
     dBtn.textContent = '↻ Decode again'; decoding = false;
   });
   new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { o.disconnect(); setTimeout(() => dBtn.click(), 600); } }, { threshold: .6 }).observe($('#decode'));
+  }
 
   /* ---------- power curve demo ---------- */
+  if ($('#curveSvg')) {
   const svg = $('#curveSvg'), NS = 'http://www.w3.org/2000/svg';
   const M = { l: 48, r: 16, t: 14, b: 34 }, VW = 640, VH = 380;
   const sx = v => M.l + (v - 2.5) / (17.5) * (VW - M.l - M.r);
@@ -247,11 +260,13 @@
     await wait(900); if (autoplay) setMode('filter');
     await wait(1800); if (autoplay) setMode('fit');
   }, { threshold: .5 }).observe(svg);
+  }
 
   /* ---------- lightbox ---------- */
   const lb = $('#lightbox'), lbImg = $('img', lb);
   $$('[data-full]').forEach(f => f.addEventListener('click', () => { lbImg.src = f.dataset.full; lbImg.alt = f.querySelector('img').alt; lb.classList.add('open'); }));
-  $('#scrollyBrowser').addEventListener('click', () => { lbImg.src = img.src; lb.classList.add('open'); });
+  const sb = $('#scrollyBrowser');
+  if (sb) sb.addEventListener('click', () => { lbImg.src = $('#scrollyImg').src; lb.classList.add('open'); });
   lb.addEventListener('click', () => lb.classList.remove('open'));
   addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 

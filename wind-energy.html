@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wind Turbine Power-Curve Intelligence · Praveenraj Manickam</title>
+<meta name="description" content="Praveenraj Manickam, Data Engineer. I turn raw machine signals (CAN bus, SCADA, telecom) into intelligence people can trust.">
+<meta property="og:title" content="Praveenraj Manickam · Data Engineer">
+<meta property="og:description" content="From raw machine signals to trusted decisions. FleetPulse Intelligence, wind-energy analytics and more.">
+<meta property="og:image" content="assets/img/fp-overview.webp">
+<meta name="theme-color" content="#07090d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Cpath d='M8 34h12l5-12 8 22 6-16 4 6h13' fill='none' stroke='%2330e0c1' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="brand" aria-label="Home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h12l5-12 8 22 6-16 4 6h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Praveenraj<b>.</b></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html#projects">← All projects</a>
+    <a href="fleetpulse.html">FleetPulse</a><a href="wind-energy.html" class="active">Wind Energy</a><a href="dissertation.html">Dissertation</a>
+    <a href="index.html#contact" class="nav-cta">Let's talk</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+<section class="proj-hero">
+  <div class="wrap">
+    <a href="index.html#projects" class="back mono reveal">← Back to projects</a>
+    <span class="chapter-no mono reveal">Pixxon AI · Current work</span>
+    <h1 class="ph-title reveal">Wind Turbine Power-Curve Intelligence</h1>
+    <div class="chip-row"><span class="chip">Python</span><span class="chip">PostgreSQL</span><span class="chip">SciPy</span><span class="chip">LightGBM</span><span class="chip">FastAPI</span><span class="chip">MLflow</span><span class="chip">RabbitMQ</span></div>
+    <div class="psr">
+      <div class="psr-item reveal"><span class="mono psr-k k-p">The problem</span><p>SCADA data from wind farms is full of noise: curtailment, sensor faults and downtime. In raw power curves you can't tell which turbines are under-performing.</p></div>
+      <div class="psr-item reveal"><span class="mono psr-k k-b">What I built</span><p>A power-curve service: sigma-based outlier filtering, physics-constrained logistic fits (curve_fit with a Differential Evolution fallback) and a parallel pipeline, plus LightGBM anomaly models and FastAPI KPIs.</p></div>
+      <div class="psr-item reveal"><span class="mono psr-k k-r">The result</span><p>R² 0.999 on 7 of 8 turbines · ~3 s per turbine · 1.98× faster in parallel · 15+ turbines in production.</p></div>
+    </div>
+    <figure class="ph-cover light reveal" data-full="assets/img/pc-overlap.webp"><img src="assets/img/pc-overlap.webp" alt="Wind Turbine Power-Curve Intelligence" width="1600" height="1000"></figure>
+  </div>
+</section>
+
+<!-- ================= 03 WIND ================= -->
+<section class="chapter" id="wind">
+  <div class="wrap">
+
+    <div class="wind-grid">
+      <div class="curve-card reveal">
+        <div class="curve-head">
+          <h3>Raw → clean power curve</h3>
+          <div class="seg" role="tablist" id="curveSeg">
+            <button class="active" data-mode="raw" role="tab">Raw</button>
+            <button data-mode="filter" role="tab">Filter</button>
+            <button data-mode="fit" role="tab">Fit</button>
+          </div>
+        </div>
+        <svg id="curveSvg" viewBox="0 0 640 380" role="img" aria-label="Power curve demo: wind speed against power output"></svg>
+        <div class="curve-legend">
+          <span><i class="lg lg-clean"></i>clean</span>
+          <span><i class="lg lg-out"></i>outliers</span>
+          <span><i class="lg lg-theo"></i>theoretical</span>
+          <span><i class="lg lg-fit"></i>fitted</span>
+          <span class="mono" id="curveStat">R² —</span>
+        </div>
+      </div>
+
+      <div class="wind-points">
+        <div class="wp reveal"><b>01</b><div><h4>Hybrid optimiser</h4><p>curve_fit, with a Differential Evolution fallback</p></div></div>
+        <div class="wp reveal"><b>02</b><div><h4>Physics as constraints</h4><p>Capped at 2,000 kW rated power, never above theoretical</p></div></div>
+        <div class="wp reveal"><b>03</b><div><h4>1.98× faster</h4><p>Parallel pipeline, 6 workers</p></div></div>
+        <div class="wp reveal"><b>04</b><div><h4>Full ML stack</h4><p>LightGBM · FastAPI · MLflow · RabbitMQ</p></div></div>
+      </div>
+    </div>
+
+    <div class="wind-stats">
+      <div class="reveal"><b><span class="count" data-to="0.999" data-dec="3">0</span></b><span>R² on 7 of 8 turbines</span></div>
+      <div class="reveal"><b>~<span class="count" data-to="3">0</span>s</b><span>per turbine</span></div>
+      <div class="reveal"><b><span class="count" data-to="1.94" data-dec="2">0</span>M</b><span>rows, 2021 → 2024</span></div>
+      <div class="reveal"><b><span class="count" data-to="11">0</span></b><span>subsystems monitored</span></div>
+    </div>
+
+    <div class="bento bento-wind">
+      <figure class="b-item b-tall light reveal" data-full="assets/img/pc-grid.webp"><img src="assets/img/pc-grid.webp" alt="Power curves for all turbines, theoretical vs fitted" loading="lazy" width="1600" height="1264"><figcaption>8 turbines, fitted in about 31 s</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/pc-overlap.webp"><img src="assets/img/pc-overlap.webp" alt="All fitted turbine curves overlaid against the theoretical curve" loading="lazy" width="1600" height="1137"><figcaption>All turbines vs theoretical: under-performers stand out</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/pc-djm01.webp"><img src="assets/img/pc-djm01.webp" alt="DJM_01 theoretical vs refined power curve" loading="lazy" width="1600" height="960"><figcaption>DJM_01: 1,098 outliers removed</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/pc-djm03-raw.webp"><img src="assets/img/pc-djm03-raw.webp" alt="DJM_03 2025 power curve" loading="lazy" width="1600" height="1067"><figcaption>DJM_03: RMSE 16.14 kW</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/gt-dashboard.webp"><img src="assets/img/gt-dashboard.webp" alt="Year-wise turbine anomaly dashboard" loading="lazy" width="1600" height="1014"><figcaption>Anomaly % by year and subsystem</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 RESEARCH ================= -->
+
+<section class="next-wrap">
+  <div class="wrap">
+    <a class="next-proj reveal" href="dissertation.html">
+      <span class="mono">Next project</span>
+      <b>Heart Disease Risk Prediction →</b>
+    </a>
+    <div class="hero-actions center reveal" style="margin-top:32px">
+      <a href="index.html#contact" class="btn btn-primary">Talk to me about this</a>
+      <a href="assets/Praveenraj_Manickam_Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lb-close" aria-label="Close">×</button>
+  <img alt="">
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

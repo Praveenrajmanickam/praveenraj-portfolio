@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heart Disease Risk Prediction · Praveenraj Manickam</title>
+<meta name="description" content="Praveenraj Manickam, Data Engineer. I turn raw machine signals (CAN bus, SCADA, telecom) into intelligence people can trust.">
+<meta property="og:title" content="Praveenraj Manickam · Data Engineer">
+<meta property="og:description" content="From raw machine signals to trusted decisions. FleetPulse Intelligence, wind-energy analytics and more.">
+<meta property="og:image" content="assets/img/fp-overview.webp">
+<meta name="theme-color" content="#07090d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Cpath d='M8 34h12l5-12 8 22 6-16 4 6h13' fill='none' stroke='%2330e0c1' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="brand" aria-label="Home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h12l5-12 8 22 6-16 4 6h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Praveenraj<b>.</b></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html#projects">← All projects</a>
+    <a href="fleetpulse.html">FleetPulse</a><a href="wind-energy.html">Wind Energy</a><a href="dissertation.html" class="active">Dissertation</a>
+    <a href="index.html#contact" class="nav-cta">Let's talk</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+<section class="proj-hero">
+  <div class="wrap">
+    <a href="index.html#projects" class="back mono reveal">← Back to projects</a>
+    <span class="chapter-no mono reveal">MSc dissertation · Aston University</span>
+    <h1 class="ph-title reveal">Heart Disease Risk Prediction</h1>
+    
+    <div class="psr">
+      <div class="psr-item reveal"><span class="mono psr-k k-p">The problem</span><p>Heart disease is a leading cause of death, and lifestyle is something people can change. But do the same habits drive the risk in every country?</p></div>
+      <div class="psr-item reveal"><span class="mono psr-k k-b">What I built</span><p>XGBoost and Random Forest models trained on lifestyle features from India, the USA, the UK and France, with feature importance used to rank the risk drivers.</p></div>
+      <div class="psr-item reveal"><span class="mono psr-k k-r">The result</span><p>Smoking, obesity and physical inactivity came out as the major contributors to coronary heart disease risk.</p></div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- TODO(Praveenraj): add your LinkedIn project details here (full title, accuracy/AUC, link). -->
+<section class="chapter chapter-dark" id="research">
+  <div class="wrap">
+    <div class="diss-grid">
+      <div class="chapter-head reveal">
+        <span class="chapter-no mono">04 / MSc dissertation · Aston</span>
+        <h2>Can lifestyle data predict a heart at risk?</h2>
+        <p class="chapter-lead">Coronary heart disease risk modelled across four countries with XGBoost and Random Forest.</p>
+        <div class="chip-row"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Random Forest</span><span class="chip">Feature engineering</span></div>
+      </div>
+      <div class="diss-visual reveal">
+        <div class="globe-row">
+          <span class="country">🇮🇳 India</span><span class="country">🇺🇸 USA</span><span class="country">🇬🇧 UK</span><span class="country">🇫🇷 France</span>
+        </div>
+        <h4 class="mono small muted">Top risk drivers found</h4>
+        <div class="risk">
+          <div class="risk-row"><span>Smoking</span><div class="risk-bar"><i style="--w:92%"></i></div></div>
+          <div class="risk-row"><span>Obesity</span><div class="risk-bar"><i style="--w:80%"></i></div></div>
+          <div class="risk-row"><span>Inactivity</span><div class="risk-bar"><i style="--w:68%"></i></div></div>
+        </div>
+        <p class="mono small muted">Bars show rank order only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="next-wrap">
+  <div class="wrap">
+    <a class="next-proj reveal" href="fleetpulse.html">
+      <span class="mono">Next project</span>
+      <b>FleetPulse Intelligence →</b>
+    </a>
+    <div class="hero-actions center reveal" style="margin-top:32px">
+      <a href="index.html#contact" class="btn btn-primary">Talk to me about this</a>
+      <a href="assets/Praveenraj_Manickam_Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lb-close" aria-label="Close">×</button>
+  <img alt="">
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
