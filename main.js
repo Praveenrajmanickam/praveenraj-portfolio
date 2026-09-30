@@ -20,7 +20,7 @@
     nav.classList.toggle('scrolled', y > 30);
     let cur = '';
     sections.forEach(s => { if (s.offsetTop - 140 <= y) cur = s.id; });
-    $$('a', links).forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+    $$('a[href^="#"]', links).forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
     timelineFill();
   };
   addEventListener('scroll', onScroll, { passive: true });
