@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praveenraj Manickam · Data Engineer</title>
+<meta name="description" content="Praveenraj Manickam, Data Engineer. I turn raw machine signals (CAN bus, SCADA, telecom) into intelligence people can trust.">
+<meta property="og:title" content="Praveenraj Manickam · Data Engineer">
+<meta property="og:description" content="From raw machine signals to trusted decisions. FleetPulse Intelligence, wind-energy analytics and more.">
+<meta property="og:image" content="assets/img/fp-overview.webp">
+<meta name="theme-color" content="#07090d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Cpath d='M8 34h12l5-12 8 22 6-16 4 6h13' fill='none' stroke='%2330e0c1' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Back to top">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h12l5-12 8 22 6-16 4 6h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Praveenraj<b>.</b></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#story">Journey</a>
+    <a href="#fleetpulse">FleetPulse</a>
+    <a href="#wind">Wind Energy</a>
+    <a href="#research">Research</a>
+    <a href="#toolkit">Skills</a>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <canvas id="signalCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="pulse-dot"></span> Open to roles · Joins in ≤ 15 days · Coimbatore</p>
+      <h1 class="reveal">
+        <span class="hi">Hi, I'm Praveenraj.</span>
+        I turn <span class="grad">raw machine signals</span> into decisions you can <em>trust.</em>
+      </h1>
+      <p class="lead reveal">Data Engineer · 3.5+ years · wind energy, telecom, retail.</p>
+      <div class="hero-actions reveal">
+        <a href="#fleetpulse" class="btn btn-primary">See my work <span aria-hidden="true">→</span></a>
+        <a href="assets/Praveenraj_Manickam_Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
+      </div>
+      <div class="hero-typed reveal" aria-live="polite">
+        <span class="mono prompt">$</span> <span class="mono" id="typed"></span><span class="caret"></span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="portrait tilt">
+        <div class="portrait-glow" aria-hidden="true"></div>
+        <div class="portrait-frame">
+          <img src="assets/img/portrait.webp" alt="Praveenraj Manickam in Birmingham, UK" width="900" height="1200">
+          <div class="portrait-grade" aria-hidden="true"></div>
+          <div class="portrait-scan" aria-hidden="true"></div>
+          <div class="portrait-scope" aria-hidden="true">
+            <svg viewBox="0 0 400 110" preserveAspectRatio="none"><path id="scopePath" d="" /></svg>
+          </div>
+          <div class="portrait-tag mono"><span class="pulse-dot"></span>Praveenraj Manickam · Data Engineer</div>
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        </div>
+        <div class="stat-chip sc-1"><b class="count" data-to="68" data-suffix="M+">0</b><span>CAN frames</span></div>
+        <div class="stat-chip sc-2"><b class="count" data-to="0.999" data-dec="3">0</b><span>R² power curve</span></div>
+        <div class="stat-chip sc-3"><b class="count" data-to="409">0</b><span>tests passing</span></div>
+        <div class="stat-chip sc-4"><b class="count" data-to="15" data-suffix="+">0</b><span>wind turbines</span></div>
+      </div>
+    </div>
+  </div>
+  <a href="#story" class="scroll-hint" aria-label="Scroll to my story"><span></span>scroll</a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PySpark</span><i>◆</i><span>PostgreSQL</span><i>◆</i><span>Delta Lake</span><i>◆</i><span>FastAPI</span><i>◆</i><span>MLflow</span><i>◆</i><span>RabbitMQ</span><i>◆</i><span>LightGBM</span><i>◆</i><span>React + TypeScript</span><i>◆</i><span>SAE J1939</span><i>◆</i><span>SCADA</span><i>◆</i><span>Power BI</span><i>◆</i><span>SQL</span><i>◆</i>
+    <span>PySpark</span><i>◆</i><span>PostgreSQL</span><i>◆</i><span>Delta Lake</span><i>◆</i><span>FastAPI</span><i>◆</i><span>MLflow</span><i>◆</i><span>RabbitMQ</span><i>◆</i><span>LightGBM</span><i>◆</i><span>React + TypeScript</span><i>◆</i><span>SAE J1939</span><i>◆</i><span>SCADA</span><i>◆</i><span>Power BI</span><i>◆</i><span>SQL</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ================= 01 JOURNEY ================= -->
+<section class="chapter" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="chapter-head reveal">
+        <span class="chapter-no mono">01 / My journey</span>
+        <h2>I started with electronics.<br><span class="muted">Now I follow the signals.</span></h2>
+        <p class="chapter-lead">Different industries, one job: <b>take data nobody can read and make it something a team can act on.</b></p>
+      </div>
+      <div class="collage reveal" aria-hidden="true">
+        <img class="c1" src="assets/img/fp-overview.webp" alt="" loading="lazy" width="1600" height="900">
+        <img class="c2" src="assets/img/pc-overlap.webp" alt="" loading="lazy" width="1600" height="1137">
+        <img class="c3" src="assets/img/fp-trace.webp" alt="" loading="lazy" width="1600" height="900">
+      </div>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="tl-line"><span id="tlFill"></span></div>
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date mono">2018 – 2022</div>
+        <div class="tl-card">
+          <span class="tag">Foundation</span>
+          <h3>BEng, Electronics & Communication</h3>
+          <p class="tl-org">Anna University · Chennai</p>
+        </div>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date mono">2022 – 2023</div>
+        <div class="tl-card">
+          <span class="tag">Telecom</span>
+          <h3>Network Data Analyst</h3>
+          <p class="tl-org">Quadgen Wireless · Bangalore</p>
+          <p>SQL + PySpark ETL and Power BI for network KPIs.</p>
+          <div class="tl-win"><b>+60%</b> reporting accuracy</div>
+        </div>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date mono">2024 – 2025</div>
+        <div class="tl-card">
+          <span class="tag">Education</span>
+          <h3>MSc Data Analytics <span class="merit">Merit</span></h3>
+          <p class="tl-org">Aston University · Birmingham, UK</p>
+          <a href="#research" class="tl-link">See my dissertation ↓</a>
+        </div>
+      </article>
+      <article class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date mono">2024 – 2025</div>
+        <div class="tl-card">
+          <span class="tag">Retail</span>
+          <h3>Data Analyst</h3>
+          <p class="tl-org">Trend Clothing · Birmingham, UK</p>
+          <p>Customer & sales insights, automated Power BI reporting.</p>
+          <div class="tl-win"><b>+30%</b> client conversion</div>
+        </div>
+      </article>
+      <article class="tl-item reveal now">
+        <div class="tl-dot"></div>
+        <div class="tl-date mono">2026 – Now</div>
+        <div class="tl-card">
+          <span class="tag tag-live"><span class="pulse-dot"></span>Now</span>
+          <h3>Data Engineer</h3>
+          <p class="tl-org">Pixxon AI (Greentech) · Coimbatore</p>
+          <p>SCADA pipelines for 15+ turbines · LightGBM · FastAPI · MLflow.</p>
+          <a href="#wind" class="tl-link">See the wind work ↓</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 FLEETPULSE ================= -->
+<section class="chapter chapter-dark" id="fleetpulse">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no mono">02 / Flagship project</span>
+      <h2>FleetPulse Intelligence.</h2>
+      <p class="chapter-lead">68M raw CAN frames from a real heavy-duty truck → a traceable lakehouse, API, dashboard and guarded AI analyst. Built end to end by me.</p>
+      <div class="chip-row">
+        <span class="chip">PySpark</span><span class="chip">Delta Lake</span><span class="chip">J1939</span><span class="chip">FastAPI</span><span class="chip">React + TS</span><span class="chip">LLM guardrails</span>
+        <a class="chip chip-link" href="https://github.com/Praveenrajmanickam/fleetpulse-intelligence" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi reveal"><b class="count" data-to="68051361" data-sep="1">0</b><span>CAN frames</span></div>
+      <div class="kpi reveal"><b><span class="count" data-to="0.2" data-dec="1">0</span>%</b><span>fuel reconciliation error</span></div>
+      <div class="kpi reveal"><b class="count" data-to="880">0</b><span>idle events detected</span></div>
+      <div class="kpi reveal"><b class="count" data-to="409">0</b><span>automated tests</span></div>
+    </div>
+
+    <div class="scrolly" id="scrolly">
+      <div class="scrolly-steps">
+        <div class="step" data-img="fp-overview" data-cap="Overview">
+          <span class="step-no mono">01 · Problem</span>
+          <h3>Raw CAN is noise.</h3>
+          <p>Binary payloads, gaps, stale signals. I built the layers that make it readable.</p>
+        </div>
+        <div class="step" data-img="fp-trace" data-cap="CAN → Gold trace">
+          <span class="step-no mono">02 · Trust</span>
+          <h3>Every number traces to a real frame.</h3>
+          <p>Dashboard value → Gold → Silver → raw bytes → source file and line.</p>
+        </div>
+        <div class="step" data-img="fp-twin" data-cap="Vehicle Digital Twin">
+          <span class="step-no mono">03 · Digital twin</span>
+          <h3>Signals mapped onto the truck.</h3>
+          <p>Click a system and see its decoded J1939 signals.</p>
+        </div>
+        <div class="step" data-img="fp-idle" data-cap="Idle Intelligence">
+          <span class="step-no mono">04 · Insight</span>
+          <h3>8.33 h stationary with engine on.</h3>
+          <p>Found in the data, not guessed: 880 events and 19.6 L of fuel.</p>
+        </div>
+        <div class="step" data-img="fp-ai" data-cap="AI Analyst">
+          <span class="step-no mono">05 · AI</span>
+          <h3>FleetPulse computes. The LLM explains.</h3>
+          <p>Every number the AI states is validated against the evidence.</p>
+        </div>
+      </div>
+      <div class="scrolly-stage">
+        <div class="browser" id="scrollyBrowser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url mono">fleetpulse / <b id="scrollyCap">Overview</b></span></div>
+          <div class="browser-view">
+            <img src="assets/img/fp-overview.webp" alt="FleetPulse dashboard screenshot" id="scrollyImg" width="1600" height="900">
+          </div>
+        </div>
+        <div class="stage-dots" id="stageDots"></div>
+      </div>
+    </div>
+
+    <div class="pipeline-block">
+      <h3 class="sub-h reveal">Architecture</h3>
+      <div class="pipeline" id="pipeline">
+        <div class="pnode"><span class="mono">01</span><b>Raw CAN</b></div>
+        <div class="pnode bronze"><span class="mono">02</span><b>Bronze</b></div>
+        <div class="pnode silver"><span class="mono">03</span><b>Silver</b></div>
+        <div class="pnode gold"><span class="mono">04</span><b>Gold</b></div>
+        <div class="pnode"><span class="mono">05</span><b>FastAPI</b></div>
+        <div class="pnode"><span class="mono">06</span><b>React</b></div>
+        <div class="pnode ai"><span class="mono">07</span><b>AI Analyst</b></div>
+        <svg class="pipe-flow" aria-hidden="true"><line x1="0" y1="50%" x2="100%" y2="50%"/></svg>
+      </div>
+    </div>
+
+    <div class="decode reveal" id="decode">
+      <div class="decode-copy">
+        <span class="chapter-no mono">Try it</span>
+        <h3>Decode a real CAN frame.</h3>
+        <button class="btn btn-primary" id="decodeBtn">▶ Decode frame</button>
+      </div>
+      <div class="decode-panel mono">
+        <div class="dline"><span class="dk">CAN ID</span><span class="dv">0x0CF004E6</span></div>
+        <div class="bytes" id="bytes">
+          <span>F0</span><span>7D</span><span>82</span><span class="hot">BD</span><span class="hot">12</span><span>FF</span><span>FF</span><span>FF</span>
+        </div>
+        <div class="dline" data-step="1"><span class="dk">PGN</span><span class="dv">61444 <em>EEC1</em></span></div>
+        <div class="dline" data-step="2"><span class="dk">SPN</span><span class="dv">190 <em>Engine speed</em></span></div>
+        <div class="dline" data-step="3"><span class="dk">bytes 4–5</span><span class="dv">0x12BD → 4797</span></div>
+        <div class="dline" data-step="4"><span class="dk">× 0.125</span><span class="dv">rpm/bit</span></div>
+        <div class="dline result" data-step="5"><span class="dk">engine_speed</span><span class="dv"><b>599.625</b> rpm <em class="ok">✓ valid</em></span></div>
+      </div>
+    </div>
+
+    <h3 class="sub-h reveal">From the build</h3>
+    <div class="bento">
+      <figure class="b-item b-wide reveal" data-full="assets/img/fp-event.webp"><img src="assets/img/fp-event.webp" alt="Event investigation screen" loading="lazy" width="1600" height="900"><figcaption>Event investigation</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/fp-drive.webp"><img src="assets/img/fp-drive.webp" alt="Speed, RPM, fuel and coolant over a driving session" loading="lazy" width="1600" height="1223"><figcaption>Discovery: one driving session</figcaption></figure>
+      <figure class="b-item reveal" data-full="assets/img/fp-sensors.webp"><img src="assets/img/fp-sensors.webp" alt="Sensor Explorer" loading="lazy" width="1600" height="900"><figcaption>Sensor Explorer</figcaption></figure>
+      <figure class="b-item reveal" data-full="assets/img/fp-health.webp"><img src="assets/img/fp-health.webp" alt="Signal Health" loading="lazy" width="1600" height="900"><figcaption>Signal Health</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/fp-rpm.webp"><img src="assets/img/fp-rpm.webp" alt="Engine speed vs vehicle speed, showing gear lines" loading="lazy" width="1045" height="753"><figcaption>RPM vs speed: gears emerge from data</figcaption></figure>
+      <figure class="b-item reveal" data-full="assets/img/fp-session.webp"><img src="assets/img/fp-session.webp" alt="Session Explorer" loading="lazy" width="1600" height="900"><figcaption>Session Explorer</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 WIND ================= -->
+<section class="chapter" id="wind">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no mono">03 / Now · Pixxon AI</span>
+      <h2>Wind turbines don't lie.<br><span class="muted">Their sensors sometimes do.</span></h2>
+      <p class="chapter-lead">My power-curve service cleans noisy SCADA data and fits a physically valid curve for each turbine, in about 3 s.</p>
+    </div>
+
+    <div class="wind-grid">
+      <div class="curve-card reveal">
+        <div class="curve-head">
+          <h3>Raw → clean power curve</h3>
+          <div class="seg" role="tablist" id="curveSeg">
+            <button class="active" data-mode="raw" role="tab">Raw</button>
+            <button data-mode="filter" role="tab">Filter</button>
+            <button data-mode="fit" role="tab">Fit</button>
+          </div>
+        </div>
+        <svg id="curveSvg" viewBox="0 0 640 380" role="img" aria-label="Power curve demo: wind speed against power output"></svg>
+        <div class="curve-legend">
+          <span><i class="lg lg-clean"></i>clean</span>
+          <span><i class="lg lg-out"></i>outliers</span>
+          <span><i class="lg lg-theo"></i>theoretical</span>
+          <span><i class="lg lg-fit"></i>fitted</span>
+          <span class="mono" id="curveStat">R² —</span>
+        </div>
+      </div>
+
+      <div class="wind-points">
+        <div class="wp reveal"><b>01</b><div><h4>Hybrid optimiser</h4><p>curve_fit, with a Differential Evolution fallback</p></div></div>
+        <div class="wp reveal"><b>02</b><div><h4>Physics as constraints</h4><p>Capped at 2,000 kW rated power, never above theoretical</p></div></div>
+        <div class="wp reveal"><b>03</b><div><h4>1.98× faster</h4><p>Parallel pipeline, 6 workers</p></div></div>
+        <div class="wp reveal"><b>04</b><div><h4>Full ML stack</h4><p>LightGBM · FastAPI · MLflow · RabbitMQ</p></div></div>
+      </div>
+    </div>
+
+    <div class="wind-stats">
+      <div class="reveal"><b><span class="count" data-to="0.999" data-dec="3">0</span></b><span>R² on 7 of 8 turbines</span></div>
+      <div class="reveal"><b>~<span class="count" data-to="3">0</span>s</b><span>per turbine</span></div>
+      <div class="reveal"><b><span class="count" data-to="1.94" data-dec="2">0</span>M</b><span>rows, 2021 → 2024</span></div>
+      <div class="reveal"><b><span class="count" data-to="11">0</span></b><span>subsystems monitored</span></div>
+    </div>
+
+    <div class="bento bento-wind">
+      <figure class="b-item b-tall light reveal" data-full="assets/img/pc-grid.webp"><img src="assets/img/pc-grid.webp" alt="Power curves for all turbines, theoretical vs fitted" loading="lazy" width="1600" height="1264"><figcaption>8 turbines, fitted in about 31 s</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/pc-overlap.webp"><img src="assets/img/pc-overlap.webp" alt="All fitted turbine curves overlaid against the theoretical curve" loading="lazy" width="1600" height="1137"><figcaption>All turbines vs theoretical: under-performers stand out</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/pc-djm01.webp"><img src="assets/img/pc-djm01.webp" alt="DJM_01 theoretical vs refined power curve" loading="lazy" width="1600" height="960"><figcaption>DJM_01: 1,098 outliers removed</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/pc-djm03-raw.webp"><img src="assets/img/pc-djm03-raw.webp" alt="DJM_03 2025 power curve" loading="lazy" width="1600" height="1067"><figcaption>DJM_03: RMSE 16.14 kW</figcaption></figure>
+      <figure class="b-item light reveal" data-full="assets/img/gt-dashboard.webp"><img src="assets/img/gt-dashboard.webp" alt="Year-wise turbine anomaly dashboard" loading="lazy" width="1600" height="1014"><figcaption>Anomaly % by year and subsystem</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 RESEARCH ================= -->
+<!-- TODO(Praveenraj): add your LinkedIn project details here (full title, accuracy/AUC, link). -->
+<section class="chapter chapter-dark" id="research">
+  <div class="wrap">
+    <div class="diss-grid">
+      <div class="chapter-head reveal">
+        <span class="chapter-no mono">04 / MSc dissertation · Aston</span>
+        <h2>Can lifestyle data predict a heart at risk?</h2>
+        <p class="chapter-lead">Coronary heart disease risk modelled across four countries with XGBoost and Random Forest.</p>
+        <div class="chip-row"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Random Forest</span><span class="chip">Feature engineering</span></div>
+      </div>
+      <div class="diss-visual reveal">
+        <div class="globe-row">
+          <span class="country">🇮🇳 India</span><span class="country">🇺🇸 USA</span><span class="country">🇬🇧 UK</span><span class="country">🇫🇷 France</span>
+        </div>
+        <h4 class="mono small muted">Top risk drivers found</h4>
+        <div class="risk">
+          <div class="risk-row"><span>Smoking</span><div class="risk-bar"><i style="--w:92%"></i></div></div>
+          <div class="risk-row"><span>Obesity</span><div class="risk-bar"><i style="--w:80%"></i></div></div>
+          <div class="risk-row"><span>Inactivity</span><div class="risk-bar"><i style="--w:68%"></i></div></div>
+        </div>
+        <p class="mono small muted">Bars show rank order only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 IMPACT + SKILLS ================= -->
+<section class="chapter" id="toolkit">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no mono">05 / Impact & skills</span>
+      <h2>What I bring to your team.</h2>
+    </div>
+
+    <div class="impact-grid">
+      <div class="impact reveal"><div class="impact-num">+<span class="count" data-to="60">0</span>%</div><h4>Reporting accuracy</h4><p>Quadgen Wireless</p></div>
+      <div class="impact reveal"><div class="impact-num">+<span class="count" data-to="30">0</span>%</div><h4>Client conversion</h4><p>Trend Clothing</p></div>
+      <div class="impact reveal"><div class="impact-num">PL-300</div><h4>Microsoft certified</h4><p>Power BI Data Analyst</p></div>
+    </div>
+
+    <div class="toolkit">
+      <div class="tk reveal"><h4><span class="mono">01</span> Data Engineering</h4><div class="pills"><span>PySpark</span><span>SQL</span><span>PostgreSQL</span><span>Delta Lake</span><span>ETL</span><span>Data modelling</span><span>Time series</span></div></div>
+      <div class="tk reveal"><h4><span class="mono">02</span> ML & Analytics</h4><div class="pills"><span>LightGBM</span><span>XGBoost</span><span>Anomaly detection</span><span>Forecasting</span><span>SciPy</span><span>MLflow</span></div></div>
+      <div class="tk reveal"><h4><span class="mono">03</span> Serving & Systems</h4><div class="pills"><span>FastAPI</span><span>RabbitMQ</span><span>React + TS</span><span>Streamlit</span><span>pytest</span><span>Git</span></div></div>
+      <div class="tk reveal"><h4><span class="mono">04</span> BI</h4><div class="pills"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>KPI dashboards</span></div></div>
+    </div>
+
+    <div class="principles">
+      <div class="principle reveal"><span class="mono">principle.01</span><h4>Trace it or don't ship it.</h4></div>
+      <div class="principle reveal"><span class="mono">principle.02</span><h4>Say what the data can't.</h4></div>
+      <div class="principle reveal"><span class="mono">principle.03</span><h4>Physics beats a pretty fit.</h4></div>
+      <div class="principle reveal"><span class="mono">principle.04</span><h4>Make re-runs boring.</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div class="contact-avatar reveal"><img src="assets/img/profile.webp" alt="Praveenraj Manickam" width="320" height="320" loading="lazy"><span class="pulse-dot"></span></div>
+    <span class="chapter-no mono reveal">06 / Your move</span>
+    <h2 class="reveal">Messy data? <span class="grad">Let's talk.</span></h2>
+    <p class="lead reveal">Available in 15 days or less · English, Tamil, Malayalam</p>
+    <div class="contact-cards reveal">
+      <a href="mailto:praveenrajmanickam@gmail.com" class="cc"><span class="mono">email</span><b>praveenrajmanickam@gmail.com</b></a>
+      <a href="tel:+917339329316" class="cc"><span class="mono">phone</span><b>+91 73393 29316</b></a>
+      <a href="https://www.linkedin.com/in/praveenraj-manickam-a81101206/" target="_blank" rel="noopener" class="cc"><span class="mono">linkedin</span><b>praveenraj-manickam ↗</b></a>
+      <a href="https://github.com/Praveenrajmanickam" target="_blank" rel="noopener" class="cc"><span class="mono">github</span><b>Praveenrajmanickam ↗</b></a>
+    </div>
+    <div class="hero-actions reveal center">
+      <a href="mailto:praveenrajmanickam@gmail.com?subject=Opportunity%20for%20Praveenraj" class="btn btn-primary">Email me</a>
+      <a href="assets/Praveenraj_Manickam_Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
+    </div>
+  </div>
+  <footer class="foot wrap mono">
+    <span>© 2026 Praveenraj Manickam</span>
+    <span>FleetPulse figures: University of Turku truck CAN dataset (CC BY 4.0)</span>
+  </footer>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lb-close" aria-label="Close">×</button>
+  <img alt="">
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
